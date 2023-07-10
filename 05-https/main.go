@@ -3,8 +3,8 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 )
 
@@ -18,7 +18,7 @@ func readResource(path string) (string, []byte, error) {
 	}
 	fmt.Println("File path:", filePath)
 
-	fileContent, err := ioutil.ReadFile(filePath)
+	fileContent, err := os.ReadFile(filePath)
 	if err != nil {
 		return "", nil, err
 	}
